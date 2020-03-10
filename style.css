@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body {
+  background-color: #303030;
+  color: #eee;
+  font-family: 'Zilla Slab', sans-serif;
+}
+
+.logo {
+  margin-bottom: .5em
+}
+
+.nav-bar {
+  margin-top: 1em;
+}
+
+.main-content {
+  padding: 2em;
+}
