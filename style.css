@@ -5,12 +5,13 @@ body {
 }
 
 nav {
-  height: 20vh;
+  height: 120px;
   margin-top: 3vh;
 }
 
 footer {
-  height: 10vh;
+  height: 40px;
+  margin-bottom: 3vh;
 }
 
 .logo {
@@ -40,7 +41,7 @@ footer {
 }
 
 .main-content {
-  padding: 2rem;
+  padding: 2rem 1rem;
   min-height: 67vh;
 }
 
