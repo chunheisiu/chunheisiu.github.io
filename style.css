@@ -1,17 +1,53 @@
 body {
   background-color: #303030;
-  color: #eee;
+  color: #f8f9fa;
   font-family: 'Zilla Slab', sans-serif;
 }
 
-.logo {
-  margin-bottom: .5em
+nav {
+  margin-top: 1rem;
 }
 
-.nav-bar {
-  margin-top: 1em;
+footer {
+  min-height: 35px;
+  margin-bottom: 1.5rem
+}
+
+.container {
+  min-height: 90vh
+}
+
+.logo {
+  margin-bottom: .5rem
+}
+
+.logo-icon, .social-icon {
+  filter: invert(91%) sepia(4%) saturate(44%) hue-rotate(173deg) brightness(107%) contrast(98%);
+}
+
+.logo-icon:hover, .social-icon:hover {
+  filter: invert(97%) sepia(1%) saturate(4896%) hue-rotate(178deg) brightness(89%) contrast(91%);
+}
+
+.logo-icon {
+  height: 75px;
+  width: 75px;
+}
+
+.social-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.nav-item {
+  font-weight: 500;
 }
 
 .main-content {
   padding: 2em;
+}
+
+.resume {
+  height: 100vh;
+  width: 100%;
 }
