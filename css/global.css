@@ -14,6 +14,10 @@ footer {
   margin-bottom: 3vh;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
 .logo {
   margin-bottom: .5rem;
 }
@@ -43,14 +47,4 @@ footer {
 .main-content {
   padding: 2rem 1rem;
   min-height: 67vh;
-}
-
-.resume {
-  height: 100vh;
-  width: 100%;
-}
-
-.portrait {
-  background-color: transparent;
-  border: 1px solid #565656
 }
