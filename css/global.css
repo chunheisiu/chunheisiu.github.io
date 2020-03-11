@@ -5,8 +5,8 @@ body {
 }
 
 nav {
-  height: 120px;
-  margin: 3vh 0;
+  min-height: 120px;
+  margin: 1rem 0;
 }
 
 footer {
@@ -45,6 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-content {
-  padding: 2rem 1rem;
+  padding: 1rem;
   min-height: 67vh;
 }
