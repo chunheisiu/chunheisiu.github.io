@@ -2,3 +2,20 @@
   background-color: transparent;
   border: 1px solid #565656
 }
+
+.job-company {
+  margin-bottom: 0;
+}
+
+.job-location {
+  font-size: small;
+  margin: .25rem 0 .5rem 0;
+}
+
+.job-item {
+  margin: 1.5rem 0;
+}
+
+.job-description{
+  font-size: 90%;
+}
