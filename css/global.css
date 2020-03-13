@@ -5,13 +5,13 @@ body {
 }
 
 nav {
-  min-height: 100px;
   margin-top: 1rem;
+  min-height: 100px;
 }
 
 footer {
-  min-height: 40px;
   margin-bottom: 2rem;
+  min-height: 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,12 +22,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
 }
 
-.logo-icon, .social-icon {
-  filter: invert(91%) sepia(4%) saturate(44%) hue-rotate(173deg) brightness(107%) contrast(98%);
-}
-
-.social-icon:hover {
-  filter: invert(97%) sepia(1%) saturate(4896%) hue-rotate(178deg) brightness(89%) contrast(91%);
+a, .social-icon {
+  transition: .25s ease;
 }
 
 .logo-icon {
@@ -40,11 +36,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 25px;
 }
 
+.social-icon:hover {
+  filter: brightness(75%);
+}
+
 .nav-item {
   font-weight: 600;
 }
 
 .main-content {
-  padding: 1rem;
   min-height: 67vh;
+  padding: 1rem;
 }
