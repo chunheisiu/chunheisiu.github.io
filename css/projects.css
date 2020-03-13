@@ -1,0 +1,13 @@
+.project-row {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-date {
+  font-size: small;
+  margin: .25rem 0 .5rem 0;
+}
+
+.project-link {
+  text-decoration: underline;
+}
