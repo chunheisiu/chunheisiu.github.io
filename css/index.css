@@ -1,0 +1,13 @@
+.typewriter-box {
+  height: 64vh;
+  position: relative;
+}
+
+.typewriter {
+  font-family: monospace;
+  font-size: 2rem;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
