@@ -11,3 +11,8 @@
 .project-link {
   text-decoration: underline;
 }
+
+.project-img {
+  height: auto;
+  max-width: 80%;
+}
