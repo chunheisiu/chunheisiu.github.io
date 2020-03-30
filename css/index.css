@@ -1,14 +1,14 @@
 .typewriter-box {
-  height: 67vh;
-  position: relative;
+    height: 67vh;
+    position: relative;
 }
 
 .typewriter {
-  font-family: monospace;
-  font-size: 2rem;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 100%;
+    font-family: monospace;
+    font-size: 2rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }

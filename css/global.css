@@ -1,50 +1,50 @@
 body {
-  background-color: #303030;
-  color: #f8f9fa;
-  font-family: 'Inter', sans-serif;
+    background-color: #303030;
+    color: #f8f9fa;
+    font-family: 'Inter', sans-serif;
 }
 
 nav {
-  margin-top: 1rem;
-  min-height: 100px;
+    margin-top: 1rem;
+    min-height: 100px;
 }
 
 footer {
-  margin-bottom: 2rem;
-  min-height: 40px;
+    margin-bottom: 2rem;
+    min-height: 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .logo {
-  margin-bottom: .5rem;
+    margin-bottom: .5rem;
 }
 
 a, .social-icon {
-  transition: .25s ease;
+    transition: .25s ease;
 }
 
 .logo-icon {
-  height: 75px;
-  width: 75px;
+    height: 75px;
+    width: 75px;
 }
 
 .social-icon {
-  height: 25px;
-  width: 25px;
+    height: 25px;
+    width: 25px;
 }
 
 .social-icon:hover {
-  filter: brightness(75%);
+    filter: brightness(75%);
 }
 
 .nav-item {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .main-content {
-  min-height: 67vh;
-  padding: 1rem;
+    min-height: 67vh;
+    padding: 1rem;
 }

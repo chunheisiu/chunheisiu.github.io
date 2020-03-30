@@ -1,23 +1,23 @@
 .portrait {
-  background-color: transparent;
-  border: 1px solid #565656;
-  margin-bottom: 1rem;
+    background-color: transparent;
+    border: 1px solid #565656;
+    margin-bottom: 1rem;
 }
 
 .job-company {
-  margin: 0;
+    margin: 0;
 }
 
 .job-location {
-  font-size: small;
-  margin: .25rem 0 .5rem 0;
+    font-size: small;
+    margin: .25rem 0 .5rem 0;
 }
 
 .job-item {
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.job-description{
-  font-size: 90%;
+.job-description {
+    font-size: 90%;
 }
