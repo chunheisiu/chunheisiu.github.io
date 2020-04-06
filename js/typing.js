@@ -1,4 +1,4 @@
-(function(global){
+(function (global) {
 
     var selector,       // id of dom elem
         prevSpans = [], // array of previous span elem
@@ -9,13 +9,13 @@
 
 
     // main object
-    var typing = function(id, speed, initialDelay){
+    var typing = function (id, speed, initialDelay) {
         return new fn(id, speed, initialDelay);
-    }
+    };
 
     // constructor
     function fn(id, speed, initialDelay) {
-        
+
         // save to global variable
         selector = id;
         typeSpeed = speed || null;
@@ -32,18 +32,18 @@
         strInput.push("");
         prevSpans.push(newSpan);
         return this;
-    };
+    }
 
 
     // add methods to proto
     var library = fn.prototype = {
 
         // animation speed
-        speed: function(speed){
+        speed: function (speed) {
             typeSpeed = speed;
             return this;
         },
-        
+
         // animate typing effect
         // 
         // first, retrive previous span, then create a new sibling span, saved as current span, input string will be included in this span
@@ -57,7 +57,7 @@
         // 
         // Global variable used: prevSpans, waitTime, typeSpeed, string
 
-        type: function(str, obj){
+        type: function (str, obj) {
             var counter = 0,
                 style = {},
                 currSpan,
@@ -65,18 +65,18 @@
                 newSpan = createElem("span"),
                 newLine,
                 speed = typeSpeed;
-           
+
             prevSpan = prevSpans[prevSpans.length - 1];
             currSpan = createSibling(prevSpan, newSpan);
-            
-            if(typeof str !== "string") return this;
+
+            if (typeof str !== "string") return this;
 
             // sanitize the style obj, and create a normalized style obj
             // obj should have the keynames exactly as the css property name in JS
             // Now only support "fontWeight", "color", "fontStyle"
-            if(obj && typeof obj === "object"){
-                for(let key in obj){
-                    switch(key){
+            if (obj && typeof obj === "object") {
+                for (let key in obj) {
+                    switch (key) {
                         case "fontWeight":
                             style.fontWeight = obj[key];
                             break;
@@ -91,57 +91,57 @@
                     }
                 }
             }
-               
+
             // add to string
             strInput.push(str);
-            
-            for(let i = 0; i < str.length; i++){
-                setTimeout( (function(){
+
+            for (let i = 0; i < str.length; i++) {
+                setTimeout((function () {
 
                     currChar = str.charAt(i);
 
-                    if(i==0){
+                    if (i == 0) {
                         // remove the blinking on previous span
-                        if( hasClass(prevSpan, "current") )
+                        if (hasClass(prevSpan, "current"))
                             prevSpan = resetSpanClass(prevSpan, "current", "past");
                         // add .current class to toggle the blinking cursor
-                        if( !hasClass(currSpan, "current") )
+                        if (!hasClass(currSpan, "current"))
                             currSpan.classList.add("current");
-                         // check if first character is whitespace
-                        if( isWhiteSpace(currChar) )
+                        // check if first character is whitespace
+                        if (isWhiteSpace(currChar))
                             currSpan.classList.add("head");
-                    }else{
+                    } else {
                         // reset .space class on current span
-                        if( hasClass(currSpan, "space") )
+                        if (hasClass(currSpan, "space"))
                             currSpan.classList.remove("space");
                         // check if currChar is whitespace
-                        if( isWhiteSpace(currChar) )
+                        if (isWhiteSpace(currChar))
                             currSpan.classList.add("space");
                     }
-                    
+
                     // add to string
                     currSpan.innerHTML += currChar;
 
                     // apply styles
-                    if(style.fontWeight)
+                    if (style.fontWeight)
                         currSpan.style.fontWeight = style.fontWeight;
-                    if(style.fontColor)
+                    if (style.fontColor)
                         currSpan.style.color = style.fontColor;
-                    if(style.fontStyle)
+                    if (style.fontStyle)
                         currSpan.style.fontStyle = style.fontStyle;
 
-                }), waitTime + (speed * counter) );
+                }), waitTime + (speed * counter));
 
                 counter++;
             }
 
             waitTime += speed * counter;
-            prevSpans.push(currSpan);  
+            prevSpans.push(currSpan);
             return this;
         },
 
         // backword delete
-        delete: function(str){
+        delete: function (str) {
 
             var str = str || "",
                 currSpan = prevSpans[prevSpans.length - 1],
@@ -150,35 +150,35 @@
                 endIndex,
                 speed = typeSpeed;
 
-            if(!str){
+            if (!str) {
                 endIndex = 0;
-            }else{
-                endIndex =  currStr.includes(str) ? currStr.indexOf(str) : null;
+            } else {
+                endIndex = currStr.includes(str) ? currStr.indexOf(str) : null;
 
-                if(!endIndex){
+                if (!endIndex) {
                     console.log("string not match");
                     return this;
                 }
             }
 
-            for(let i = currStr.length - 1; i >= endIndex; i--){
-                setTimeout( (function(){
+            for (let i = currStr.length - 1; i >= endIndex; i--) {
+                setTimeout((function () {
 
                     var str = currStr.slice(0, i);
 
                     // remove the .head class if no str left in the span
-                    if( i == endIndex && !str.length && hasClass(currSpan, "head") )
+                    if (i == endIndex && !str.length && hasClass(currSpan, "head"))
                         currSpan.classList.remove("head");
                     // reset .space class
-                    if( hasClass(currSpan, "space") )
+                    if (hasClass(currSpan, "space"))
                         currSpan.classList.remove("space");
                     // check if currChar is whitespace
-                    if( hasTailingSpace(str) )
+                    if (hasTailingSpace(str))
                         currSpan.classList.add("space");
 
                     currSpan.innerHTML = str;
-                    
-                }), waitTime + (speed * counter) );
+
+                }), waitTime + (speed * counter));
 
                 counter++;
             }
@@ -189,54 +189,52 @@
         },
 
         // wait
-        wait: function(time){
-            if(typeof time !== "number") return this;
+        wait: function (time) {
+            if (typeof time !== "number") return this;
             waitTime += time;
             return this;
         },
 
         // line break
-        lineBreak: function(){
+        lineBreak: function () {
             // create a new span
             var newLine = createElem("div", "line"),
                 newSpan = createElem("span"),
                 currSpan = prevSpans[prevSpans.length - 1];
-                currLine = currSpan.parentNode;
+            currLine = currSpan.parentNode;
 
             newLine = document.getElementById(selector).appendChild(newLine);
             newSpan = newLine.appendChild(newSpan);
 
             // insert linebreak
             strInput.push("\n");
-    
-            setTimeout( (function(){
+
+            setTimeout((function () {
                 currSpan = resetSpanClass(currSpan, "current", "past");
                 newSpan.classList.add("current");
             }), waitTime);
 
             prevSpans.push(newSpan);
             prevLines.push(currLine);
-            
+
             return this;
         },
 
         // log
-        log: function(){
+        log: function () {
             console.log(this);
         }
-    }
-
-
-
+    };
 
 
     // helper function
     // check if single whitespace
-    function isWhiteSpace(str){      
+    function isWhiteSpace(str) {
         return /^\s$/.test(str);
     }
+
     // check if last character is whitespace
-    function hasTailingSpace(str){
+    function hasTailingSpace(str) {
         return /\s$/.test(str);
     }
 
@@ -247,29 +245,25 @@
 
     // use to reset a span's class, removes the "current" class, and add "past" class meanwhile
     // used everytime a span or new line is created
-    function resetSpanClass(elem, clsToRemove, clsToAdd){
-        if(!elem) return;
+    function resetSpanClass(elem, clsToRemove, clsToAdd) {
+        if (!elem) return;
         elem.classList.add(clsToAdd);
         elem.classList.remove(clsToRemove);
         return elem;
     }
 
     // shorcut for document.createElement()
-    function createElem(elemName, className){
+    function createElem(elemName, className) {
         var elem = document.createElement(elemName),
             cls = className || null;
-        if(cls) elem.classList.add(cls);
+        if (cls) elem.classList.add(cls);
         return elem;
     }
 
     // shorcut for create a sibling
-    function createSibling(elem, sibling){
+    function createSibling(elem, sibling) {
         return elem.parentNode.appendChild(sibling);
     }
-
-
-    
-
 
 
     // assign pointer to proto obj
