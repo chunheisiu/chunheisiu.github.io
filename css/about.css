@@ -30,3 +30,12 @@
     width: 95%;
     height: auto;
 }
+
+.ms-cert-div {
+    padding-top: 1rem;
+}
+
+.cert-link {
+    font-size: 90%;
+    text-decoration: underline;
+}
