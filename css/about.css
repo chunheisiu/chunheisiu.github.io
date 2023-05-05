@@ -22,13 +22,27 @@
     font-size: 90%;
 }
 
+.job-description-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.job-description > li:not(:first-child) {
+    margin-top: .5rem;
+}
+
 .job-img-div {
     margin-top: .25rem;
 }
 
 .job-img {
-    width: 95%;
-    height: auto;
+    width: 90%;
+    height: 3rem;
+}
+
+.job-img-p {
+    text-align: center;
 }
 
 .ms-cert-div {
@@ -38,4 +52,10 @@
 .cert-link {
     font-size: 90%;
     text-decoration: underline;
+}
+
+.ms-cert-img {
+    width: 60%;
+    height: auto;
+    margin-top: 0.5rem;
 }
